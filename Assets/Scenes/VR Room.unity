@@ -3117,7 +3117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a07ef133a37d140a87cdf1f1c75fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractionManager: {fileID: 0}
+  m_InteractionManager: {fileID: 130009822}
   m_InteractionLayers:
     m_Bits: 1610612959
   m_Handedness: 2
@@ -3273,7 +3273,7 @@ MonoBehaviour:
   m_NearCasterSortingStrategy: 1
   m_SortNearTargetsAfterTargetFilter: 0
   m_EnableFarCasting: 1
-  m_FarInteractionCaster: {fileID: 0}
+  m_FarInteractionCaster: {fileID: 469637598}
   m_FarAttachMode: 0
   m_EnableUIInteraction: 1
   m_BlockUIOnInteractableSelection: 1
@@ -4404,7 +4404,7 @@ MonoBehaviour:
   m_SortNearTargetsAfterTargetFilter: 0
   m_EnableFarCasting: 1
   m_FarInteractionCaster: {fileID: 0}
-  m_FarAttachMode: 1
+  m_FarAttachMode: 0
   m_EnableUIInteraction: 1
   m_BlockUIOnInteractableSelection: 1
   m_UIHoverEntered:
