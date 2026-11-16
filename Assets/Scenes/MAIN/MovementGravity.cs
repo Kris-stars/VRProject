@@ -1,0 +1,200 @@
+
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Climbing;
+
+public class MovementGravity : MonoBehaviour
+{
+    [Header("References")]
+    public ClimbProvider climbProvider;
+    public CharacterController controller;
+    public Transform vrCamera;
+
+    [Header("Space Movement")]
+    public float pushMultiplier = 1.5f;
+    public float maxSpeed = 5f;
+    public float smoothing = 15f;
+
+    private Vector3 velocity;
+    private Vector3 lastPosition;
+    private bool wasClimbing;
+
+    [Header("Wall Collision")]
+    [Range(0f, 1f)]
+    public float bounceAmount = 0.5f;
+
+    [Range(0f, 1f)]
+    public float slideFriction = 0.1f;
+
+
+    [Header("Force Field")]
+    public Transform forceFieldCenter;
+    public float forceFieldRadius = 20f;
+    public float pullStrength = 3f;
+    public float maxPullSpeed = 8f;
+
+    void Start()
+    {
+        lastPosition = transform.position;
+    }
+
+    void Update()
+    {
+        if (climbProvider == null || controller == null)
+            return;
+
+        float dt = Time.deltaTime;
+
+        if (dt <= 0f)
+            return;
+
+        // Keep the CharacterController aligned with the headset.
+        if (vrCamera != null)
+        {
+            Vector3 head =
+                transform.InverseTransformPoint(vrCamera.position);
+
+            float height = Mathf.Clamp(head.y, 0.5f, 2.2f);
+
+            controller.height = height;
+
+            controller.center = new Vector3(
+                head.x,
+                height / 2f,
+                head.z
+            );
+        }
+
+        // Check if the player is currently climbing.
+        bool isClimbing =
+            climbProvider.climbAnchorInteractor != null;
+
+        if (isClimbing)
+        {
+            if (!wasClimbing)
+            {
+                // Stop old velocity when grabbing a wall.
+                velocity = Vector3.zero;
+            }
+            else
+            {
+                // Calculate the movement created by climbing.
+                Vector3 movement =
+                    transform.position - lastPosition;
+
+                Vector3 targetVelocity = movement / dt;
+
+                float blend =
+                    1f - Mathf.Exp(-smoothing * dt);
+
+                velocity = Vector3.Lerp(
+                    velocity,
+                    targetVelocity,
+                    blend
+                );
+            }
+        }
+        else
+        {
+            // Player has released the wall.
+            if (wasClimbing)
+            {
+                velocity *= pushMultiplier;
+
+                velocity = Vector3.ClampMagnitude(
+                    velocity,
+                    maxSpeed
+                );
+            }
+
+            // Apply force when outside the safe area.
+            ApplyForceField(dt);
+
+            // Continue floating with the current velocity.
+            Vector3 movement = velocity * dt;
+
+            if (movement.sqrMagnitude > 0.00000001f)
+            {
+                controller.Move(movement);
+            }
+        }
+
+        wasClimbing = isClimbing;
+        lastPosition = transform.position;
+    }
+
+    // Called when the CharacterController hits a collider.
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Do not change velocity during climbing.
+        if (climbProvider != null &&
+            climbProvider.climbAnchorInteractor != null)
+            return;
+
+        Vector3 normal = hit.normal.normalized;
+
+        // Find how quickly we are moving into the wall.
+        float speedIntoWall =
+            Vector3.Dot(velocity, normal);
+
+        if (speedIntoWall >= -0.01f)
+            return;
+
+        // Keep movement parallel to the wall.
+        Vector3 slideVelocity =
+            Vector3.ProjectOnPlane(velocity, normal);
+
+        slideVelocity *= (1f - slideFriction);
+
+        // Bounce away from the wall.
+        Vector3 bounceVelocity =
+            -normal * speedIntoWall * bounceAmount;
+
+        // Combine sliding and bouncing.
+        velocity = slideVelocity + bounceVelocity;
+    }
+
+    void ApplyForceField(float dt)
+    {
+        if (forceFieldCenter == null)
+            return;
+
+        // Use the headset for player distance when available.
+        Vector3 playerPosition =
+            vrCamera != null
+            ? vrCamera.position
+            : transform.position;
+
+        Vector3 direction =
+            forceFieldCenter.position - playerPosition;
+
+        float distance = direction.magnitude;
+
+        // No pull inside the safe area.
+        if (distance <= forceFieldRadius)
+            return;
+
+        Vector3 pullDirection = direction.normalized;
+
+        // Accelerate the player back towards the centre.
+        velocity += pullDirection * pullStrength * dt;
+
+        velocity = Vector3.ClampMagnitude(
+            velocity,
+            maxPullSpeed
+        );
+
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (forceFieldCenter == null)
+            return;
+
+        Gizmos.color = Color.cyan;
+
+        Gizmos.DrawWireSphere(
+            forceFieldCenter.position,
+            forceFieldRadius
+        );
+    }
+}

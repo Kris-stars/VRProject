@@ -1,0 +1,101 @@
+This is for credit under each Sound artist plus their license type.
+
+Sound Name: airlock_1_3_sec_mast
+Sound Link: https://freesound.org/people/beerbelly38/sounds/77935/
+Sound Artist Name: beerbelly38 on freesound.org
+Sound Artist link: https://freesound.org/people/beerbelly38/
+License type: Attribution 4.0
+
+Sound Name: Sputnik beep
+Sound Link: https://www.nasa.gov/wp-content/uploads/2015/01/578626main_sputnik-beep.mp3
+Sound Artist Name: Soviet Space Agency 
+Sound Archived: NASA Historical sounds archive
+Sound Artist link: https://www.nasa.gov/historical-sounds/
+License type: Public Domain (NASA media usage guidelines)
+
+Sound Name: Server Room ATMOS + Electrical Buzz
+Sound Link: https://freesound.org/people/Smice_6/sounds/536525/
+Sound Artist Name: Smice_6
+Sound Artist Link: https://freesound.org/people/Smice_6/
+License type: Creative Commons 0
+
+Sound Name: Water fountain from burst pipe
+Sound Link: https://freesound.org/people/AugustSandberg/sounds/677722/
+Sound Artist Name: AugustSandberg
+Sound Artist Link: https://freesound.org/people/AugustSandberg/
+License type: Creative Commons 0
+
+Sound Name: Cassini: Saturn Radio Emissions #2
+Sound Link: https://www.nasa.gov/wp-content/uploads/2015/01/584795main_saturn_radio_waves.mp3
+Sound Artist Name: NASA
+Sound Artist Link: https://www.nasa.gov/historical-sounds/
+License type: Public Domain (NASA media usage guidelines)
+
+Sound Name: Beep
+Sound Link: https://freesound.org/people/anthonychartier2020/sounds/341278/
+Sound Artist Name: anthonychartier2020
+Sound Artist Link: https://freesound.org/people/anthonychartier2020/
+License type: Attribution 4.0
+
+Sound Name: Cab Radio - San Diego
+Sound Link: https://freesound.org/people/Filmscore/sounds/340992/
+Sound Artist Name: Filmscore
+Sound Artist Link: https://freesound.org/people/Filmscore/
+License type: Creative Commons 0
+
+Sound Name: success.wav
+Sound Link: https://freesound.org/people/grunz/sounds/109662/
+Sound Artist Name: grunz
+Sound Artist Link: https://freesound.org/people/grunz/
+License type: Attribution 3.0
+
+Sound Name: Double Beep
+Sound Link: https://freesound.org/people/andersmmg/sounds/511492/
+Sound Artist: andersmmg
+Sound Artist Link: https://freesound.org/people/andersmmg/
+License type: Attribution 4.0
+
+Sound Name: remix of 54047__guitarguy1985__buzzer_Variants.wav
+Sound Link: https://freesound.org/people/Timbre/sounds/101354/
+Sound Artist Name: Timbre
+Sound Artist Link: https://freesound.org/people/Timbre/
+Sound Site Name: freesound.org
+Sound Site Link: https://freesound.org
+License type: Attribution NonCommercial 4.0
+
+Sound Name: Light Switch on
+Sound Link: https://freesound.org/people/Philip_Berger/sounds/788643/
+Sound Artist Name: Philip_Berger
+Sound Artist Link: https://freesound.org/people/Philip_Berger/
+License type: Creative Commons 0
+
+Sound Name: Light Switch off
+Sound Link: https://freesound.org/people/Philip_Berger/sounds/788642/
+Sound Artist Name: Philip_Berger
+Sound Artist Link: https://freesound.org/people/Philip_Berger/
+License type: Creative Commons 0
+
+Sound Name: Permission Denied.wav
+Sound Link: https://freesound.org/people/ironcross32/sounds/582632/
+Sound Artist Name: ironcross32
+Sound Artist Link: https://freesound.org/people/ironcross32/
+License type: Creative Commons 0
+
+Sound Name: Metallic Clink 2.wav
+Sound Link: https://freesound.org/people/HenKonen/sounds/682153/
+Sound Artist Name: HenKonen
+Sound Artist Link: https://freesound.org/people/HenKonen/
+License type: Creative Commons 0
+
+Sound Name: Metal Creaks_Groans.wav
+Sound Link: https://freesound.org/people/Cell31_Sound_Productions/sounds/380403/
+Sound Artist Name: Cell31_Sound_Productions
+Sound Artist Link: https://freesound.org/people/Cell31_Sound_Productions/
+license type: Attribution 4.0
+
+Sound Name: METLImpt_Metal Resonant Deep Thud_SDFY_Metal Resonant.wav
+Sound Link: https://freesound.org/people/SoundDesignForYou/sounds/697751/
+Sound Artist Name: SoundDesignForYou
+Sound Artist Link: https://freesound.org/people/SoundDesignForYou/
+license type: Creative Commons 0
+
