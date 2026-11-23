@@ -7,22 +7,26 @@ public class EmergencyScript : MonoBehaviour
     public bool isFixed;
     public GameObject Door;
     public float AlarmDelay;
+
+    public GameObject Text;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
             lights = GameObject.FindGameObjectsWithTag("Light");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
     private void OnTriggerEnter(Collider other)
     {
-        Door.GetComponent<DoorScript>().OpenDoor();
-        GetComponent<BoxCollider>().enabled = false;
-        StartCoroutine(Flash());
+        Debug.Log(other.gameObject.tag);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Door.GetComponent<DoorScript>().OpenDoor();
+            GetComponent<BoxCollider>().enabled = false;
+            StartCoroutine(Flash());
+            Text.SetActive(true);
+        }
     }
     public void FlashRed()
     {

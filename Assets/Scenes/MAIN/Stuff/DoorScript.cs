@@ -5,6 +5,9 @@ public class DoorScript : MonoBehaviour
     public Animator animator;
     public bool isOpenedDoor;
     public AudioListener player;
+
+    public bool outdoor;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,12 +22,14 @@ public class DoorScript : MonoBehaviour
     public void OpenDoor()
     {
         animator.SetTrigger("Open Door");
-        if (!isOpenedDoor) { player.enabled = false; }
+
+
+        if (outdoor) { player.enabled = false; }
     }
     public void CloseDoor()
     {
         animator.SetTrigger("Close Door");
-        if (!isOpenedDoor) { player.enabled = true; }
+        if (outdoor) { player.enabled = true; }
     }
 }
 
