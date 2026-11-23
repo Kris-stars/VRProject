@@ -14,6 +14,11 @@ public class GoodBatteryCelebration : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip cheerfulSound;
 
+    [Header("Things Fixed")]
+    public GameObject buzz;
+    public AudioListener player;
+    public EmergencyScript es;
+
     private bool hasCelebrated = false;
 
     
@@ -32,17 +37,22 @@ public class GoodBatteryCelebration : MonoBehaviour
 
     void OnBatteryInserted(SelectEnterEventArgs args)
     {
+        
+
         // Only the actual good battery can trigger the celebration.
         if (hasCelebrated || goodBattery == null ||
             args.interactableObject != (IXRSelectInteractable)goodBattery)
             return;
+        es.isFixed = true;
+        player.enabled = true;
+        buzz.SetActive(false);
 
         hasCelebrated = true;
 
         
-            confetti.Play();
+        confetti.Play();
 
         
-            audioSource.PlayOneShot(cheerfulSound);
+        audioSource.PlayOneShot(cheerfulSound);
     }
 }

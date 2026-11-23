@@ -11,6 +11,9 @@ TagManager:
   - Compost
   - Flame
   - Trail
+  - Hand
+  - Light
+  - Gun
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Gun
+  - Dart
   - 
   - Raycast
   - Test
