@@ -2,7 +2,9 @@
 
 Locomotion
 
-In this project, I used my own movement-based system to match the theme of the project, which was a simulation. I had to use Climb as my main form of movement in 0 gravity. How I did it was by making the Project have no gravity in the project physics <img width="1050" height="214" alt="Screenshot 1" src="https://github.com/user-attachments/assets/5acbed9b-06bb-4570-8f7a-ef1c109fa180" />
+In this project, I used my own movement-based system to match the theme of the project, which was a simulation. I had to use Climb as my main form of movement in 0 gravity. How I did it was by making the Project have no gravity in the project physics. 
+<img width="1050" height="214" alt="Screenshot 1" src="https://github.com/user-attachments/assets/5acbed9b-06bb-4570-8f7a-ef1c109fa180" />
+
  this is how I was able to solve the gravity problem. To get the gravity feel of pushing the wall, I had it so the transform of the player is updated and taken as velocity to be moved around. I also made it so if the player touches the wall by flying into it, it would try to mimic real physics, where you would bounce at an angle if coming in. To be honest, this is probably my proudest moment in the project because it just feels really smooth and nice to play around with *look at Screenshots 2 and 3 for code*. For the last bit, I needed it so that the player had a way to come back to the space station because sometimes players would slip and couldn't come back, so I just made a simple dome where, if the player tries to leave it, it would just pull them back to the space station *see Screenshot 4 for code*. This part of the project I am not too happy about, to be honest, I wanted to try to implement a jetpack where, if you move the stick, it should move the player in that direction, but I could not figure it out in time. I also wanted to try and add rotation when climbing, where if you hold on to a wall and turn your wrist, it should turn the player's rotation, but it proved very difficult and not fun in a way because it would be too much for the player to focus on, but I did not get to do proper testing for it.
 
 Objects
